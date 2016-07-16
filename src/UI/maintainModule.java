@@ -28,7 +28,7 @@ public class maintainModule {
 
 	private JFrame frame;
 	public Module module;
-	public Driver db;
+	public Driver db=new Driver();
 	//public ResultSet all; 
 	private JTextField textFieldName;
 	public ResultSet allResource;
@@ -73,7 +73,7 @@ public class maintainModule {
 	private void fillComboBox(JComboBox comboBox,String tablename,String... id) {
 		// TODO Auto-generated method stub
 		if (tablename.contains("module")){
-			ResultSet all2=db.getModulesOFProject("id");
+			ResultSet all2=db.getModulesOFProject(id[0]);
 			try {
 				comboBox.addItem(all2.getString("name"));
 			} catch (SQLException e) {

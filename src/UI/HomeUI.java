@@ -119,12 +119,18 @@ public class HomeUI {
 				index = combo_requirement.getSelectedIndex();
 				if (index == 1) {
 					System.out.println("REGISTER");
+					ResourceUI ru=new ResourceUI();
+					ru.showResourceUI();
 				}
 				if (index == 2) {
 					System.out.println("DELETE");
+					deleteResource dr=new deleteResource();
+					dr.main();
 				}
 				if (index == 3) {
 					System.out.println("EDIT");
+					editResource er=new editResource();
+					er.main();
 				}
 			}
 		});

@@ -39,7 +39,7 @@ public class Module {
 	}
 	
 	public void addModule(){
-		db.insert("module", this.name,this.project);
+		db.insert("module", this.name,this.project,this.timeCreate,this.timeMaintain);
 		System.out.println();
 //		db.insert("informational-resource-module",);
 //		db.insert("physical-resource-module",);

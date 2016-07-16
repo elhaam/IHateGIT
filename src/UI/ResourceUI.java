@@ -22,7 +22,7 @@ public class ResourceUI {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void showResourceUI() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
