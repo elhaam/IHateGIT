@@ -81,13 +81,13 @@ public class ChooseReqTypeUI {
 			public void actionPerformed(ActionEvent arg0) {
 				if(phyisRadButton_1.isSelected()){
 				
-					RegPhysicalRequirement prui=new RegPhysicalRequirement();
-					prui.showRegPhysicalRequirement();
+					RegPhysicalRequirement pu=new RegPhysicalRequirement();
+					pu.showRegPhysicalRequirement();
 					
 				}
 				else if(finanRadButton_1.isSelected()){
-					ReqFinanRequirement fiui=new ReqFinanRequirement();
-					fiui.showRegFinanRequirement();
+					RegFinanRequirement fu=new RegFinanRequirement();
+					fu.showRegFinanRequirement();
 					
 				}
 				else if(humRadButton_1.isSelected()){

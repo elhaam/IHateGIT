@@ -1,6 +1,8 @@
 package distributing;
 import DB.DataSource;
 import DB.Driver;
+import ResourceManagment.Resource;
+import ResourceManagment.ResourceType;
 public class  Project{
 	private String projectName;
 	private int moduleCount;
@@ -13,20 +15,24 @@ public class  Project{
 	//Job job;
 	//Subsystem subsystem;
 	
-	public Project(String pr ,String tech ,int mc , int hc, String r, String SD ) {
+	public Project(String pr  ,int mc , int hc,String tech, String r, String SD ) {
 		this.projectName = pr;
-		this.technology = tech;
-		this.moduleCount = mc;
 		this.humanCount = hc;
+		this.moduleCount = mc;
+		this.technology = tech;
 		this.reason = r;
 		this.startDate =SD;
 		db=new Driver();
 		
 	}
 	public void addProject(){
-		db.insert("project", this.projectName,this.moduleCount 
-				, this.humanCount , this.technology , this.reason 
+		db.insert("project", this.projectName,this.humanCount,this.moduleCount 
+				,  this.technology , this.reason 
 				, this.startDate);}
 	
 
 }
+/////////////////////////////////////////////////////////////
+
+	
+	

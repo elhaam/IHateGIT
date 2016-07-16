@@ -34,7 +34,7 @@ public class RegInfoRequirement {
 	//Requirement requirement;
 	//private PhysicalRequirement physialReq;
 	private InformationalRequirement informationalReq;
-	private JTextField textFieldcreatedate;
+	private JTextField textFieldcreateDate;
 	InformationalRequirement
 	
 	informationalRequirement;
@@ -145,29 +145,29 @@ public class RegInfoRequirement {
 		section.setFont(new Font("Tahoma", Font.PLAIN, 19));
 		section.setAlignment(Label.RIGHT);
 		
-		textFieldcreatedate = new JTextField();
-		GridBagConstraints gbc_textFieldcreatedate = new GridBagConstraints();
-		gbc_textFieldcreatedate.insets = new Insets(0, 0, 5, 5);
-		gbc_textFieldcreatedate.fill = GridBagConstraints.BOTH;
-		gbc_textFieldcreatedate.gridx = 5;
-		gbc_textFieldcreatedate.gridy = 5;
-		panel.add(textFieldcreatedate, gbc_textFieldcreatedate);
-		textFieldcreatedate.setColumns(10);
+		textFieldcreateDate = new JTextField();
+		GridBagConstraints gbc_textFieldcreateDate = new GridBagConstraints();
+		gbc_textFieldcreateDate.insets = new Insets(0, 0, 5, 5);
+		gbc_textFieldcreateDate.fill = GridBagConstraints.BOTH;
+		gbc_textFieldcreateDate.gridx = 5;
+		gbc_textFieldcreateDate.gridy = 5;
+		panel.add(textFieldcreateDate, gbc_textFieldcreateDate);
+		textFieldcreateDate.setColumns(10);
 		
-		JLabel createDate = new JLabel("\u062A\u0627\u0631\u06CC\u062E \u062F\u0631\u062E\u0648\u0627\u0633\u062A :");
-		createDate.setFont(new Font("Dialog", Font.PLAIN, 19));
-		GridBagConstraints gbc_createDate = new GridBagConstraints();
-		gbc_createDate.anchor = GridBagConstraints.EAST;
-		gbc_createDate.insets = new Insets(0, 0, 5, 5);
-		gbc_createDate.gridx = 6;
-		gbc_createDate.gridy = 5;
-		panel.add(createDate, gbc_createDate);
+		JLabel createdate = new JLabel("\u062A\u0627\u0631\u06CC\u062E \u062F\u0631\u062E\u0648\u0627\u0633\u062A :");
+		createdate.setFont(new Font("Dialog", Font.PLAIN, 19));
+		GridBagConstraints gbc_createdate = new GridBagConstraints();
+		gbc_createdate.anchor = GridBagConstraints.EAST;
+		gbc_createdate.insets = new Insets(0, 0, 5, 5);
+		gbc_createdate.gridx = 6;
+		gbc_createdate.gridy = 5;
+		panel.add(createdate, gbc_createdate);
 		
 		JButton regReq = new JButton("\u062B\u0628\u062A \u0646\u06CC\u0627\u0632\u0645\u0646\u062F\u06CC");
 		regReq.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				create(textFieldsection,textFieldproject,textFieldres , textFieldcreatedate);
+				create(textFieldres,textFieldproject,textFieldsection , textFieldcreateDate);
 			}
 		});
 		GridBagConstraints gbc_regReq = new GridBagConstraints();
@@ -179,9 +179,9 @@ public class RegInfoRequirement {
 		panel.add(regReq, gbc_regReq);
 	}
 
-	protected void create(JTextField textFieldsection2, JTextField textFieldproject2, JTextField textFieldres2, JTextField textFieldcreatedate2) {
+	protected void create(JTextField textFieldres2, JTextField textFieldproject2, JTextField textFieldsection2, JTextField textFieldcreateDate2) {
 		// TODO Auto-generated method stub
-		this.informationalRequirement=new InformationalRequirement(textFieldcreatedate2.getText() , textFieldsection2.getText(), textFieldres2.getText(), textFieldproject2.getText());
+		this.informationalRequirement=new InformationalRequirement(textFieldres2.getText() , textFieldproject2.getText(),textFieldsection2.getText(),textFieldcreateDate2.getText()   );
 		informationalRequirement.addRequirement();
 		
 	}

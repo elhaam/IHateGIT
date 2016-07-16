@@ -26,7 +26,7 @@ import java.awt.Insets;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ReqFinanRequirement {
+public class RegFinanRequirement {
 
 	private JFrame frame;
 	private JTextField textFieldres;
@@ -45,7 +45,7 @@ public class ReqFinanRequirement {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ReqFinanRequirement window = new ReqFinanRequirement();
+					RegFinanRequirement window = new RegFinanRequirement();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -57,7 +57,7 @@ public class ReqFinanRequirement {
 	/**
 	 * Create the application.
 	 */
-	public ReqFinanRequirement() {
+	public RegFinanRequirement() {
 		initialize();
 	}
 
@@ -76,7 +76,7 @@ public class ReqFinanRequirement {
 		
 		Panel panel = new Panel();
 		panel.setFont(new Font("Dialog", Font.PLAIN, 10));
-		panel.setBounds(0, 0, 451, 277);
+		panel.setBounds(10, 0, 451, 277);
 		frame.getContentPane().add(panel);
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[]{54, 0, 86, 55, 86, 50, 86, 0};
@@ -164,7 +164,7 @@ public class ReqFinanRequirement {
 		JButton regReq = new JButton("\u062B\u0628\u062A \u0646\u06CC\u0627\u0632\u0645\u0646\u062F\u06CC");
 		regReq.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				create(textFieldres,textFieldproject,textFieldsection,textFieldvalue ,textFieldcreateDate);
+				create(textFieldres,textFieldvalue,textFieldproject,textFieldsection ,textFieldcreateDate);
 			}
 		});
 		
@@ -193,9 +193,9 @@ public class ReqFinanRequirement {
 		gbc_regReq.gridy = 7;
 		panel.add(regReq, gbc_regReq);
 	}
-	protected void create(JTextField textFieldres2, JTextField textFieldsection2, JTextField textFieldcount2 , JTextField textFieldproject2 , JTextField textFieldcreatedate2) {
+	protected void create(JTextField textFieldres2, JTextField textFieldvalue2, JTextField textFieldproject2 , JTextField textFieldsection2 , JTextField textFieldcreateDate2) {
 		// TODO Auto-generated method stub
-		this.financialrequirement=new FinancialRequirement(textFieldres2.getText(),  Integer.parseInt(textFieldcount2.getText()) , textFieldproject2.getText(),textFieldsection2.getText(), textFieldcreatedate2.getText());
+		this.financialrequirement=new FinancialRequirement(textFieldres2.getText(),  Integer.parseInt(textFieldvalue2.getText()) , textFieldproject2.getText(),textFieldsection2.getText(), textFieldcreateDate2.getText());
 		financialrequirement.addRequirement();
 		
 	}

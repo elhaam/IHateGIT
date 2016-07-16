@@ -146,17 +146,31 @@ public class Physicalassign {
 			
 		});
 		
-		JButton Button = new JButton("New button");
-		Button.addActionListener(new ActionListener() {
+		JButton loadhuman = new JButton("\u0646\u06CC\u0627\u0632\u0645\u0646\u062F\u06CC \u0627\u0646\u0633\u0627\u0646\u06CC");
+		loadhuman.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				fillTable(table_1, "humanrequirement");
 				
 			}
 		});
-		Button.setBounds(306, 34, 89, 23);
-		frame.getContentPane().add(Button);
+		loadhuman.setBounds(309, 34, 128, 23);
+		frame.getContentPane().add(loadhuman);
 		loadphysical.setBounds(447, 34, 128, 23);
 		frame.getContentPane().add(loadphysical);
+		
+		JButton loadfinancial = new JButton("\u0646\u06CC\u0627\u0632\u0645\u0646\u062F\u06CC \u0645\u0627\u0644\u06CC");
+		loadfinancial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				fillTable(table_1, "financialrequirement");
+				
+			}
+		});
+		loadfinancial.setBounds(171, 34, 128, 23);
+		frame.getContentPane().add(loadfinancial);
+		
+		JButton loadinformational = new JButton("\u0646\u06CC\u0627\u0632\u0645\u0646\u062F\u06CC \u0627\u0637\u0644\u0627\u0639\u0627\u062A\u06CC");
+		loadinformational.setBounds(33, 34, 128, 23);
+		frame.getContentPane().add(loadinformational);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(74, 93, 514, 263);

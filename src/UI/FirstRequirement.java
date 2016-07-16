@@ -79,11 +79,11 @@ public class FirstRequirement {
 		JButton registerReq = new JButton("\u062B\u0628\u062A \u0646\u06CC\u0627\u0632\u0645\u0646\u062F\u06CC");
 		registerReq.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-                    if(registerReq.isSelected()){
+                 // //  if(registerReq.isSelected()){
                     	ChooseReqTypeUI chreq =new ChooseReqTypeUI ();
 					chreq.showChooseReqTypeUI();
 					
-				}
+				//}
 			}
 		});
 		registerReq.setBounds(159, 200, 109, 23);
