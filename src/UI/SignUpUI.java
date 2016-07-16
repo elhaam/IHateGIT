@@ -104,7 +104,7 @@ public class SignUpUI extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				frame.dispose();
 				
-				LoginUI s = new LoginUI();
+				LoginUI2 s = new LoginUI2();
 				s.newScreen();
 			}
 		});
