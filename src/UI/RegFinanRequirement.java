@@ -39,9 +39,9 @@ public class RegFinanRequirement {
 	/**
 	 * Launch the application.
 	 */
+	//public void showRegFinanRequirement()
 	
-	
-	public void showRegFinanRequirement() {
+	public  static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

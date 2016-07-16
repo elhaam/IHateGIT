@@ -122,7 +122,7 @@ public class Physicalassign {
 	
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 614, 442);
+		frame.setBounds(100, 100, 614, 473);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -172,8 +172,16 @@ public class Physicalassign {
 		loadinformational.setBounds(33, 34, 128, 23);
 		frame.getContentPane().add(loadinformational);
 		
+		JButton assignbutton = new JButton("\u062A\u062E\u0635\u06CC\u0635 \u0645\u0646\u0628\u0639");
+		assignbutton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		assignbutton.setBounds(39, 367, 149, 23);
+		frame.getContentPane().add(assignbutton);
+		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(74, 93, 514, 263);
+		scrollPane.setBounds(29, 93, 546, 263);
 		frame.getContentPane().add(scrollPane);
 		
 		table_1 = new JTable();

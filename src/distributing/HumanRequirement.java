@@ -3,11 +3,14 @@ import distributing.Requirement;
 
 public class HumanRequirement extends Requirement {
 	private String requirementName;
+	private int count;
+	private String projectName;
 	private String section;
 	private String createDate;
-	private String projectName;
+	private String assignDate;
+	
 	private String User;
-	private int count;
+	
 
 	public HumanRequirement(String n, int c, String p, String s  , String cd) {
 
@@ -19,11 +22,21 @@ public class HumanRequirement extends Requirement {
 		
 		// TODO Auto-generated constructor stub
 	}
+	public HumanRequirement(String ad , String user) {
+		this.assignDate=ad;
+		this.User =user;
+		
+	}
 	public void addRequirement(){
-	  	db.insert("humanrequirement",this.requirementName , this.section ,
-		this.count ,
+	  	db.insert("humanrequirement",this.requirementName , 
+	  			this.projectName,
+	  			this.count ,
+	  			
+	  	this.section ,
 		this.createDate ,
-		this.projectName );	
+		this.assignDate,
+		this.User
+		);	
 	}
 	
 

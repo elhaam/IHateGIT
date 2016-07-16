@@ -141,8 +141,8 @@ public class alaki {
 		choose.add(textFieldName);
 		textFieldName.setColumns(10);
 
-		JLabel label = new JLabel("\u0646\u0627\u0645 \u0645\u0627\u0698\u0648\u0644:");
-		label.setBounds(486, 62, 46, 14);
+		JLabel label = new JLabel("\u0646\u0627\u0645 \u0646\u06CC\u0627\u0632\u0645\u0646\u062F\u06CC : ");
+		label.setBounds(450, 62, 75, 14);
 		choose.add(label);
 
 		JLabel label_1 = new JLabel("\u0646\u0627\u0645 \u067E\u0631\u0648\u0698\u0647:");
@@ -277,20 +277,20 @@ public class alaki {
 		});
 		
 
-		JRadioButton fardbutton = new JRadioButton("\u0641\u0631\u062F");
-		fardbutton.setBounds(393, 166, 70, 23);
-		choose.add(fardbutton);
+		JRadioButton requbutton = new JRadioButton("\u0646\u06CC\u0627\u0632\u0645\u0646\u062F\u06CC");
+		requbutton.setBounds(393, 166, 70, 23);
+		choose.add(requbutton);
 
-		JRadioButton groupbutton = new JRadioButton("\u06AF\u0631\u0648\u0647");
-		groupbutton.setBounds(305, 166, 86, 23);
-		choose.add(groupbutton);
+		JRadioButton impbutton = new JRadioButton("\u067E\u06CC\u0627\u062F\u0647 \u0633\u0627\u0632\u06CC");
+		impbutton.setBounds(305, 166, 86, 23);
+		choose.add(impbutton);
 
 		JButton button = new JButton("\u0627\u062F\u0627\u0645\u0647 \u062F\u0631\u06CC\u0627\u0641\u062A \u0627\u0637\u0644\u0627\u0639\u0627\u062A");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//module=new Module()
 
-				if(fardbutton.isSelected()){
+				if(requbutton.isSelected()){
 					choose.setVisible(false);
 					fard.setVisible(true);
 					ResultSet rs=db.getARow("project", "name",project.toString() );
@@ -302,19 +302,36 @@ public class alaki {
 					}
 					//module=new Module(textFieldName.getText(),rs.,false);
 				}
-				else if(groupbutton.isSelected()){
+				else if(impbutton.isSelected()){
 					choose.setVisible(false);
 					group.setVisible(true);
 					//module=new Module(textFieldName.getText(),project.toString(),true);
 				}
 				
+				if(requbutton.isSelected()){
+					choose.setVisible(false);
+					fard.setVisible(true);
+					ResultSet rs=db.getARow("project", "name",project.toString() );
+					try {
+						//System.out.println("projectttttt:"+rs.getString("name"));
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					//module=new Module(textFieldName.getText(),rs.,false);
+				}
+				
 			}
 		});
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("New radio button");
-		rdbtnNewRadioButton.setBounds(0, 0, 109, 23);
-		choose.add(rdbtnNewRadioButton);
-		button.setBounds(240, 225, 129, 23);
+		JRadioButton designbutton = new JRadioButton("\u0637\u0631\u0627\u062D\u06CC");
+		designbutton.setBounds(228, 166, 59, 23);
+		choose.add(designbutton);
+		
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("\u062A\u062D\u0644\u06CC\u0644");
+		rdbtnNewRadioButton_1.setBounds(156, 166, 70, 23);
+		choose.add(rdbtnNewRadioButton_1);
+		button.setBounds(61, 273, 129, 23);
 		choose.add(button);
 
 
