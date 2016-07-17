@@ -49,24 +49,38 @@ public class Module {
 	}
 	public void createModule(){
 		for(int i=0;i<this.humanres.size();i++){
-			db.insert("human-resource-module", this.name,this.humanres.get(i).getSelectedItem().toString());
+			db.insert("human-resource-module", this.name,this.humanres.get(i).getSelectedItem().toString(),"create");
 		}
 		
 		for(int i=0;i<this.infores.size();i++){
-			db.insert("inforamtional-resource-module", this.name,this.infores.get(i).getSelectedItem().toString());
+			db.insert("inforamtional-resource-module", this.name,this.infores.get(i).getSelectedItem().toString(),"create");
 		}
 		
 		for(int i=0;i<this.finanres.size();i++){
-			db.insert("bank-resource-module", this.name,this.finanres.get(i).getSelectedItem().toString());
+			db.insert("bank-resource-module", this.name,this.finanres.get(i).getSelectedItem().toString(),"create");
 		}
 		
 		for(int i=0;i<this.physres.size();i++){
-			db.insert("physical-resource-module", this.name,this.physres.get(i).getSelectedItem().toString());
+			db.insert("physical-resource-module", this.name,this.physres.get(i).getSelectedItem().toString(),"create");
 		}
 		
 	}
 	public void maintainModule(){
+		for(int i=0;i<this.humanres.size();i++){
+			db.insert("human-resource-module", this.name,this.humanres.get(i).getSelectedItem().toString(),"create");
+		}
 		
+		for(int i=0;i<this.infores.size();i++){
+			db.insert("inforamtional-resource-module", this.name,this.infores.get(i).getSelectedItem().toString(),"create");
+		}
+		
+		for(int i=0;i<this.finanres.size();i++){
+			db.insert("bank-resource-module", this.name,this.finanres.get(i).getSelectedItem().toString(),"create");
+		}
+		
+		for(int i=0;i<this.physres.size();i++){
+			db.insert("physical-resource-module", this.name,this.physres.get(i).getSelectedItem().toString(),"create");
+		}
 	}
 	
 	

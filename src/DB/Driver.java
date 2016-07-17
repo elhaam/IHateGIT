@@ -190,9 +190,7 @@ public class Driver {
 			// Result set get the result of the SQL query
 			System.out.println("the my queryyyyyyyyyyyyy: "+q);
 			ResultSet rs=statement.executeQuery(q);
-			
-			while(rs.next())
-				System.out.println(rs);
+
 			return rs;
 			}
 			catch(SQLException e){

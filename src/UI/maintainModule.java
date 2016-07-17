@@ -75,7 +75,8 @@ public class maintainModule {
 		if (tablename.contains("module")){
 			ResultSet all2=db.getModulesOFProject(id[0]);
 			try {
-				comboBox.addItem(all2.getString("name"));
+				while(all2.next())
+					comboBox.addItem(all2.getString("name"));
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -154,7 +155,7 @@ public class maintainModule {
 
 
 		JLabel label_2 = new JLabel("\u0646\u0648\u0639 \u0646\u06AF\u0647\u062F\u0627\u0631\u06CC \u06A9\u0646\u0646\u062F\u0647:");
-		label_2.setBounds(479, 170, 70, 14);
+		label_2.setBounds(479, 170, 113, 14);
 		choose.add(label_2);
 
 		JPanel group = new JPanel();
@@ -306,7 +307,16 @@ public class maintainModule {
 		JComboBox comboBoxMod = new JComboBox();
 		comboBoxMod.setBounds(327, 112, 113, 20);
 		choose.add(comboBoxMod);
-		fillComboBox(comboBoxMod, "module", comboBoxProject.getSelectedItem().toString());
+
+
+		JButton button_1 = new JButton("\u0628\u0627\u0631\u06AF\u0630\u0627\u0631\u06CC \u0645\u0627\u0698\u0648\u0644 \u0647\u0627");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				fillComboBox(comboBoxMod, "module", comboBoxProject.getSelectedItem().toString());
+			}
+		});
+		button_1.setBounds(142, 58, 129, 23);
+		choose.add(button_1);
 
 
 		JLabel label_5 = new JLabel("\u0632\u0645\u0627\u0646 \u0645\u0635\u0631\u0641\u06CC:");
