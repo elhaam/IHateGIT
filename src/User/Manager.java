@@ -9,7 +9,7 @@ public class Manager extends User {
 
 	public Manager(String f, String l, int m, int e, String start, 
 			Job job, Subsystem sub, String pw) {
-		super(f, l, m, e, start, job, sub, pw, false, true);
+		super(f, l, m, e, start, job, sub, pw, 0, 1);
 		employeeid = e;
 	}
 

@@ -3,13 +3,20 @@ package UI;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JButton;
 import javax.swing.JTable;
-import java.awt.BorderLayout;
+
+import DB.Driver;
+
+import javax.swing.JScrollPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class CyclicReportUI {
 
 	private JFrame frame;
 	private JTable table;
+	Driver db = new Driver();
 
 	/**
 	 * Launch the application.
@@ -39,16 +46,27 @@ public class CyclicReportUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setTitle("\u06AF\u0632\u0627\u0631\u0634 \u062C\u0631\u06CC\u0627\u0646 \u0686\u0631\u062E\u0634\u06CC \u0645\u0635\u0631\u0641");
-		frame.setBounds(100, 100, 564, 334);
+		frame.setTitle("\u06AF\u0632\u0627\u0631\u0634 \u0686\u0631\u062E\u0634\u06CC");
+		frame.setBounds(100, 100, 630, 420);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		JButton button = new JButton("\u062A\u0648\u0644\u06CC\u062F \u06AF\u0632\u0627\u0631\u0634");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				db.getAllRows("");
+			}
+		});
+		button.setBounds(226, 24, 89, 23);
+		frame.getContentPane().add(button);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(21, 78, 570, 292);
+		frame.getContentPane().add(scrollPane);
+		
 		table = new JTable();
-		table.setBounds(10, 11, 528, 273);
-		frame.getContentPane().add(table);
+		scrollPane.setViewportView(table);
 	}
-
 	public void newScreen() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -61,5 +79,4 @@ public class CyclicReportUI {
 			}
 		});			
 	}
-
 }

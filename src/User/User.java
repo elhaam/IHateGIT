@@ -9,19 +9,16 @@ public class User extends HumanResource {
 	private int employeeid;
 
 	public User(String f, String l, int m, int e, String s, Job j, Subsystem sub, String p, 
-			Boolean ismiddle, Boolean ismanager) {
+			int isMiddle, int isEmployee) {
 		super(f, l, m, e, s, j, sub);
 		passText = p;
 		employeeid = e;
-		ismanager = false;
-		ismiddle = false;
-
-		// TODO Auto-generated constructor stub
+		isEmployee = 0;
+		isMiddle = 0;
 	}
 
 	public void addUser(){
-		db.insert("user",this.employeeid);	
-		// TODO set foreign key
+		db.insert("human-resource",this.employeeid);	
 	}
 
 	public String getPassword() {
