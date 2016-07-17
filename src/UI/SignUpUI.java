@@ -1,31 +1,24 @@
 package UI;
 
 import java.awt.EventQueue;
-import java.awt.Toolkit;
-import java.awt.event.WindowEvent;
-import java.awt.*;
-import java.awt.Event.*;
 
 import javax.swing.JFrame;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
 import javax.swing.JLabel;
-import javax.swing.JRadioButton;
-import javax.swing.JCheckBox;
-import javax.swing.SwingConstants;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+import DB.Driver;
+
 import javax.swing.JButton;
-
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
 
-public class SignUpUI extends JFrame {
+public class SignUpUI {
 
 	private JFrame frame;
+	Driver db = new Driver();
 	private JTextField textField;
-	private JPasswordField passwordField;
-	private JLabel label;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -42,6 +35,13 @@ public class SignUpUI extends JFrame {
 			}
 		});
 	}
+
+	/**
+	 * Create the application.
+	 */
+	public SignUpUI() {
+		initialize();
+	}
 	
 	public static void newScreen() {
 		EventQueue.invokeLater(new Runnable() {
@@ -56,60 +56,53 @@ public class SignUpUI extends JFrame {
 		});
 	}
 
-
-	/**
-	 * Create the application.
-	 */
-	public SignUpUI() {
-		initialize();
-	}
-
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setTitle("\u062B\u0628\u062A\u200C\u0646\u0627\u0645");
-		frame.setBounds(100, 100, 450, 261);
-		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setTitle("\u062B\u0628\u062A \u0646\u0627\u0645");
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		JLabel label = new JLabel("\u0634\u0645\u0627\u0631\u0647 \u067E\u0631\u0633\u0646\u0644\u06CC");
+		label.setBounds(314, 54, 78, 14);
+		frame.getContentPane().add(label);
+		
 		textField = new JTextField();
-		textField.setBounds(235, 43, 86, 20);
+		textField.setBounds(182, 51, 86, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(235, 87, 86, 20);
-		frame.getContentPane().add(passwordField);
+		JLabel label_1 = new JLabel("\u0631\u0645\u0632");
+		label_1.setBounds(336, 112, 46, 14);
+		frame.getContentPane().add(label_1);
 		
-		JLabel username = new JLabel("\u0646\u0627\u0645 \u06A9\u0627\u0631\u0628\u0631\u06CC");
-		username.setBounds(355, 46, 46, 14);
-		frame.getContentPane().add(username);
+		textField_1 = new JTextField();
+		textField_1.setBounds(182, 109, 86, 20);
+		frame.getContentPane().add(textField_1);
+		textField_1.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u0631\u0645\u0632 \u0639\u0628\u0648\u0631");
-		lblNewLabel_1.setBounds(355, 90, 46, 14);
-		frame.getContentPane().add(lblNewLabel_1);
-		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("");
-		chckbxNewCheckBox.setBounds(375, 139, 26, 23);
-		frame.getContentPane().add(chckbxNewCheckBox);
-		
-		label = new JLabel("\u062B\u0628\u062A\u200C\u0646\u0627\u0645 \u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u0645\u062F\u06CC\u0631 \u0645\u06CC\u0627\u0646\u06CC");
-		label.setBounds(235, 139, 140, 23);
-		frame.getContentPane().add(label);
-		
-		JButton signUp_btn = new JButton("\u062B\u0628\u062A\u200C\u0646\u0627\u0645");
-		signUp_btn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				frame.dispose();
-				
-				LoginUI2 s = new LoginUI2();
-				s.newScreen();
+		JButton button = new JButton("\u062B\u0628\u062A \u0646\u0627\u0645");
+		button.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					frame.dispose();
+//					System.out.println(textField.getText());
+//					System.out.println(textField_1.getText());
+					try{
+						db.insert("signup", Integer.parseInt(textField.getText()), textField_1.getText());
+						LoginUI s = new LoginUI();
+						s.newScreen();
+						
+					}catch(NumberFormatException ex){ // handle your exception
+						JOptionPane.showMessageDialog(null, "EmployeeID not Correct");
+						
+					}
 			}
 		});
-		
-		signUp_btn.setBounds(32, 164, 89, 23);
-		frame.getContentPane().add(signUp_btn);
+		button.setBounds(39, 193, 89, 23);
+		frame.getContentPane().add(button);
 	}
+
 }
