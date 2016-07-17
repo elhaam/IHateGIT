@@ -19,6 +19,8 @@ public class SignUpUI {
 	Driver db = new Driver();
 	private JTextField textField;
 	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
 
 	/**
 	 * Launch the application.
@@ -76,11 +78,11 @@ public class SignUpUI {
 		textField.setColumns(10);
 		
 		JLabel label_1 = new JLabel("\u0631\u0645\u0632");
-		label_1.setBounds(336, 112, 46, 14);
+		label_1.setBounds(336, 172, 46, 14);
 		frame.getContentPane().add(label_1);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(182, 109, 86, 20);
+		textField_1.setBounds(182, 169, 86, 20);
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
@@ -91,7 +93,7 @@ public class SignUpUI {
 //					System.out.println(textField.getText());
 //					System.out.println(textField_1.getText());
 					try{
-						db.insert("signup", Integer.parseInt(textField.getText()), textField_1.getText());
+						db.insert("signup", Integer.parseInt(textField.getText()), textField_1.getText(), textField_2.getText(), textField_3.getText());
 						LoginUI s = new LoginUI();
 						s.newScreen();
 						
@@ -101,8 +103,26 @@ public class SignUpUI {
 					}
 			}
 		});
-		button.setBounds(39, 193, 89, 23);
+		button.setBounds(30, 212, 89, 23);
 		frame.getContentPane().add(button);
+		
+		JLabel label_2 = new JLabel("\u0646\u0627\u0645");
+		label_2.setBounds(336, 95, 46, 14);
+		frame.getContentPane().add(label_2);
+		
+		JLabel label_3 = new JLabel("\u0646\u0627\u0645 \u062E\u0627\u0646\u0648\u0627\u062F\u06AF\u06CC");
+		label_3.setBounds(314, 132, 78, 14);
+		frame.getContentPane().add(label_3);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(182, 92, 86, 20);
+		frame.getContentPane().add(textField_2);
+		textField_2.setColumns(10);
+		
+		textField_3 = new JTextField();
+		textField_3.setBounds(182, 129, 86, 20);
+		frame.getContentPane().add(textField_3);
+		textField_3.setColumns(10);
 	}
 
 }

@@ -16,7 +16,7 @@ public class ExistingReportcc {
 		return self;
 	}
 	
-	private ExistingReportcc() {
+	public ExistingReportcc() {
 		db = Driver.getInstance();
 	}
 	

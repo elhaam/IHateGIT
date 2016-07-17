@@ -147,7 +147,7 @@ public class LoginUI {
 		frame.getContentPane().add(button);
 	}
 	
-	public static void newScreen() {
+	public void newScreen() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
