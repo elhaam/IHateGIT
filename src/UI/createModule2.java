@@ -361,7 +361,7 @@ public class createModule2 {
 		JButton gmodulebutt = new JButton("\u062B\u0628\u062A \u0645\u0627\u0698\u0648\u0644");
 		gmodulebutt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Module module=new Module(textFieldName.getText(), comboBoxProject.getSelectedItem().toString(),true,(int)spinnerF.getValue(),0,
+				Module module=new Module(textFieldName.getText(), comboBoxProject.getSelectedItem().toString(),true,(int)spinnerG.getValue(),0,
 						humanres,informationalres,physicalres,financialres);
 				module.addModule();
 				module.createModule();

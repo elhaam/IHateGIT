@@ -29,6 +29,7 @@ public class Module {
 		this.name=name;
 		this.isGroup=g;
 		this.timeCreate=timecreate;
+		System.out.println(this.timeCreate+"   "+this.timeMaintain);
 		this.timeMaintain=timemaintain;
 		this.humanres=h;
 		this.infores=i;
@@ -67,19 +68,19 @@ public class Module {
 	}
 	public void maintainModule(){
 		for(int i=0;i<this.humanres.size();i++){
-			db.insert("human-resource-module", this.name,this.humanres.get(i).getSelectedItem().toString(),"create");
+			db.insert("human-resource-module", this.name,this.humanres.get(i).getSelectedItem().toString(),"maintain");
 		}
 		
 		for(int i=0;i<this.infores.size();i++){
-			db.insert("inforamtional-resource-module", this.name,this.infores.get(i).getSelectedItem().toString(),"create");
+			db.insert("inforamtional-resource-module", this.name,this.infores.get(i).getSelectedItem().toString(),"maintain");
 		}
 		
 		for(int i=0;i<this.finanres.size();i++){
-			db.insert("bank-resource-module", this.name,this.finanres.get(i).getSelectedItem().toString(),"create");
+			db.insert("bank-resource-module", this.name,this.finanres.get(i).getSelectedItem().toString(),"maintain");
 		}
 		
 		for(int i=0;i<this.physres.size();i++){
-			db.insert("physical-resource-module", this.name,this.physres.get(i).getSelectedItem().toString(),"create");
+			db.insert("physical-resource-module", this.name,this.physres.get(i).getSelectedItem().toString(),"maintain");
 		}
 	}
 	

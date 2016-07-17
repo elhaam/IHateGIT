@@ -128,6 +128,7 @@ public class maintainModule {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("\u062B\u0628\u062A \u0641\u0631\u0622\u06CC\u0646\u062F \u0646\u06AF\u0647\u062F\u0627\u0631\u06CC");
 		frame.setBounds(100, 100, 742, 393);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
@@ -199,14 +200,7 @@ public class maintainModule {
 
 
 		JButton fmodulebutt = new JButton("\u062B\u0628\u062A \u0645\u0627\u0698\u0648\u0644");
-		fmodulebutt.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Module module=new Module(textFieldName.getText(), comboBoxProject.getSelectedItem().toString(),false,(int)spinnerF.getValue(),0,
-						humanresf,informationalresf,physicalresf,financialresf);
-				module.addModule();
-				module.createModule();
-			}
-		});
+
 		fmodulebutt.setBounds(10, 306, 89, 23);
 		fard.add(fmodulebutt);
 
@@ -279,7 +273,6 @@ public class maintainModule {
 		JButton button = new JButton("\u0627\u062F\u0627\u0645\u0647 \u062F\u0631\u06CC\u0627\u0641\u062A \u0627\u0637\u0644\u0627\u0639\u0627\u062A");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//module=new Module()
 
 				if(fardbutton.isSelected()){
 					choose.setVisible(false);
@@ -364,10 +357,11 @@ public class maintainModule {
 		JButton gmodulebutt = new JButton("\u062B\u0628\u062A \u0645\u0627\u0698\u0648\u0644");
 		gmodulebutt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Module module=new Module(textFieldName.getText(), comboBoxProject.getSelectedItem().toString(),true,(int)spinnerF.getValue(),0,
+				//System.out.println("time fard:!!!!!!!!!"+spinnerF.getValue());
+				Module module=new Module(comboBoxMod.getSelectedItem().toString(), comboBoxProject.getSelectedItem().toString(),true,0,(int)spinnerG.getValue(),
 						humanres,informationalres,physicalres,financialres);
 				module.addModule();
-				module.createModule();
+				module.maintainModule();
 
 			}
 		});
@@ -487,6 +481,15 @@ public class maintainModule {
 				int count=1;
 				jj+=25;
 				informationalres.add(addMore(panel_3,count,168,jj,145,20,"informational-resource", "no"));
+			}
+		});
+		fmodulebutt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("time group:!!!!!!!!!"+spinnerG.getValue());
+				Module module=new Module(comboBoxMod.getSelectedItem().toString(), comboBoxProject.getSelectedItem().toString(),false,0,(int)spinnerF.getValue(),
+						humanresf,informationalresf,physicalresf,financialresf);
+				module.addModule();
+				module.maintainModule();
 			}
 		});
 	}
