@@ -31,7 +31,7 @@ public class Driver {
 	private static final String DB_URL = "jdbc:mysql://localhost:3306/";
 	private static final String DATABASE_NAME = "simoorgh-managment-system";
 	private static final String USER_NAME = "root";
-	private static final String PASSWORD = "admin";
+	private static final String PASSWORD = "";
 	private static final String COMMA_SEP = " ,\n ";
 
 
