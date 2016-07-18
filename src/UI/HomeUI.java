@@ -29,7 +29,7 @@ public class HomeUI {
 	/**
 	 * Launch the application.
 	 */
-	public static void newScreen() {
+	public void newScreen() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -59,7 +59,7 @@ public class HomeUI {
 		frmClass.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmClass.getContentPane().setLayout(null);
 
-		JLabel label = new JLabel("\u062E\u0648\u0634 \u0622\u0645\u062F\u06CC\u062F \u0645\u062F\u06CC\u0631!");
+		JLabel label = new JLabel("\u062E\u0648\u0634 \u0622\u0645\u062F\u06CC\u062F!");
 		label.setBounds(455, 11, 90, 14);
 		frmClass.getContentPane().add(label);
 
@@ -74,7 +74,7 @@ public class HomeUI {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				index = combo_user.getSelectedIndex();
-				if (index == 1 || index == 2 || index ==3) {
+				if (index == 1 || index == 2 || index ==3 || index == 4 || index == 5) {
 					frmClass.dispose();
 					if (index == 1) {
 						System.out.println("PROFILE");
@@ -93,13 +93,11 @@ public class HomeUI {
 					}
 					if (index == 4) {
 						System.out.println("SABTE NAM");
-						RegUserUI s = new RegUserUI();
+						SignUpByManagerUI s = new SignUpByManagerUI();
 						s.newScreen();
 					}
 					if (index == 5) {
 						System.out.println("EXIT");
-						ExistingReportUI s = new ExistingReportUI();
-						s.newScreen();
 					}
 				}
 			}

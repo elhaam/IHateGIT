@@ -6,6 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 
 import DB.Driver;
+import ResourceManagment.Job;
+import ResourceManagment.Subsystem;
+import User.MiddleManager;
+import User.User;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -28,11 +32,21 @@ public class LoginUI {
 	private JTextField textField2;
 	String dbid;
 	String dbpass;
+	User user;
+	MiddleManager middle;
 
 
 	Connection myConn = null;
 	Statement myStmt = null;
 	ResultSet myRs = null;
+	public String getDbid() {
+		return dbid;
+	}
+
+	public void setDbid(String dbid) {
+		this.dbid = dbid;
+	}
+
 	Driver db;
 	
 
@@ -113,6 +127,31 @@ public class LoginUI {
 							frame.dispose();
 							HomeUI s = new HomeUI();
 							s.newScreen();
+//							db.insert("thisuser", dbid);
+//							myRs = myStmt.executeQuery("select * from `human-resource` where employeeid =" + textField1.getText() );
+//							String fname = myRs.getString("firstname");
+//							String lname = myRs.getString("lastname");
+//							int meli = Integer.parseInt(myRs.getString("melinum"));
+//							db.insert("thisuser", Integer.parseInt(dbid), "", "", "");
+//							int eid = Integer.parseInt(myRs.getString("employeeid"));
+//							String st = myRs.getString("startdate");
+//							Job j = Job.EMPLOYEE;
+//							Subsystem sub = Subsystem.DEVELOPMENTMAINTAINANCE;
+//							String p = dbpass; 
+//							if(myRs.getString("level").equalsIgnoreCase("employee")){
+//								
+//								
+//								
+//							}
+//							if(myRs.getString("level").equalsIgnoreCase("middlemanager")) {
+//								middle = new MiddleManager(fname, lname, meli, eid, st, j, sub, p);;
+//							}
+//							else {
+//								int isMiddle = 0;
+//								int isEmployee = 1;
+//								user = new User(fname, lname, meli, eid, st, j, sub, p, isMiddle, isEmployee);
+//								System.out.println(fname);
+//							}
 						}
 						else {
 //							System.out.println("nadariim");
@@ -147,7 +186,7 @@ public class LoginUI {
 		frame.getContentPane().add(button);
 	}
 	
-	public static void newScreen() {
+	public void newScreen() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
