@@ -92,7 +92,8 @@ public class SignUpByManagerUI {
 //					System.out.println(textField_1.getText());
 					try{
 						db.insert("login", Integer.parseInt(textField.getText()), textField_1.getText());
-						LoginUI s = new LoginUI();
+						JOptionPane.showMessageDialog(null, "added to users in system.");
+						HomeUI s = new HomeUI();
 						s.newScreen();
 						
 					}catch(NumberFormatException ex){ // handle your exception

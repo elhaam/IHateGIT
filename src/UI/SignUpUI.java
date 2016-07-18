@@ -89,10 +89,11 @@ public class SignUpUI {
 		JButton button = new JButton("\u062B\u0628\u062A \u0646\u0627\u0645");
 		button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					frame.dispose();
+					
 //					System.out.println(textField.getText());
 //					System.out.println(textField_1.getText());
 					try{
+						frame.dispose();
 						db.insert("signup", Integer.parseInt(textField.getText()), textField_1.getText(), textField_2.getText(), textField_3.getText());
 						LoginUI s = new LoginUI();
 						s.newScreen();
