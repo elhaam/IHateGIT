@@ -41,7 +41,8 @@ public class RegHumanRequirement {
 	
 	
 	public void showRegHumanRequirement() {
-		EventQueue.invokeLater(new Runnable() {
+		
+	EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					RegHumanRequirement window = new RegHumanRequirement();
@@ -164,6 +165,8 @@ public class RegHumanRequirement {
 		regReq.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				create(textFieldres,textFieldproject,textFieldsection,textFieldcount ,textFieldcreatedate);
+				SuccessUI ns = new SuccessUI();
+				ns.newScreen();
 			}
 		});
 		

@@ -26,7 +26,7 @@ import java.awt.Insets;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class RegFinanRequirement {
+public class RegFinanRequirement<newScreen> {
 
 	private JFrame frame;
 	private JTextField textFieldres;
@@ -41,7 +41,7 @@ public class RegFinanRequirement {
 	 */
 	//public void showRegFinanRequirement()
 	
-	public  static void showRegFinanRequirement() {
+	public  void showRegFinanRequirement() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -165,6 +165,11 @@ public class RegFinanRequirement {
 		regReq.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				create(textFieldres,textFieldvalue,textFieldproject,textFieldsection ,textFieldcreateDate);
+			
+			SuccessUI ns = new SuccessUI();
+			ns.newScreen();
+			//chreq.showChooseReqTypeUI();
+			//{
 			}
 		});
 		

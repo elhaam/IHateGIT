@@ -88,10 +88,10 @@ public class FirstRequirement {
 		});
 		registerReq.setBounds(159, 200, 109, 23);
 
-		JButton button_2 = new JButton(
+		JButton editRec = new JButton(
 				"\u0648\u06CC\u0631\u0627\u06CC\u0634 \u0646\u06CC\u0627\u0632\u0645\u0646\u062F\u06CC");
-		button_2.setBounds(159, 127, 109, 23);
-		button_2.addActionListener(new ActionListener() {
+		editRec.setBounds(159, 127, 109, 23);
+		editRec.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
@@ -101,15 +101,15 @@ public class FirstRequirement {
 		Box verticalBox = Box.createVerticalBox();
 		verticalBox.setBounds(144, 32, 0, 0);
 		panel_2.add(verticalBox);
-		panel_2.add(button_2);
+		panel_2.add(editRec);
 
-		JButton button_1 = new JButton("\u062D\u0630\u0641 \u0646\u06CC\u0627\u0632\u0645\u0646\u062F\u06CC");
-		button_1.setBounds(159, 55, 109, 23);
-		button_1.addActionListener(new ActionListener() {
+		JButton deleteRec = new JButton("\u062D\u0630\u0641 \u0646\u06CC\u0627\u0632\u0645\u0646\u062F\u06CC");
+		deleteRec.setBounds(159, 55, 109, 23);
+		deleteRec.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		panel_2.add(button_1);
+		panel_2.add(deleteRec);
 	}
 
 }

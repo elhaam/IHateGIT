@@ -185,6 +185,8 @@ public class RegPhysicalRequirement {
 			public void actionPerformed(ActionEvent e) {
 				
 				create(textFieldres , textFieldcount ,textFieldproject, textFieldsection  , textFieldcreatedate);
+				//SuccessUI ns = new SuccessUI();
+				//ns.newScreen();
 			}
 		});
 		GridBagConstraints gbc_regReq = new GridBagConstraints();

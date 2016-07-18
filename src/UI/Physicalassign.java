@@ -16,6 +16,8 @@ import ResourceManagment.FinancialResource;
 import ResourceManagment.HumanResource;
 import ResourceManagment.InformationalResource;
 import ResourceManagment.PhysicalResource;
+import distributing.FinancialRequirement;
+import distributing.PhysicalBusyResource;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -76,6 +78,9 @@ public class Physicalassign {
 	//public JComboBox comboBoxProject;
 	private JTable tableHuman;
 	private JTable table_1;
+	private JTextField textFieldid;
+	private JTextField textFieldassignDate;
+	private PhysicalBusyResource physicalBusyResource;
 
 	/**
 	 * Launch the application.
@@ -139,10 +144,6 @@ public class Physicalassign {
 					
 				}
 					
-					
-				
-					
-					
 			
 		});
 		
@@ -169,16 +170,41 @@ public class Physicalassign {
 		frame.getContentPane().add(loadfinancial);
 		
 		JButton loadinformational = new JButton("\u0646\u06CC\u0627\u0632\u0645\u0646\u062F\u06CC \u0627\u0637\u0644\u0627\u0639\u0627\u062A\u06CC");
+		loadinformational.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				fillTable(table_1, "informationalrequirement");
+			}
+		});
 		loadinformational.setBounds(33, 34, 128, 23);
 		frame.getContentPane().add(loadinformational);
 		
 		JButton assignbutton = new JButton("\u062A\u062E\u0635\u06CC\u0635 \u0645\u0646\u0628\u0639");
 		assignbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				create(textFieldid,textFieldassignDate);
 			}
 		});
 		assignbutton.setBounds(39, 367, 149, 23);
 		frame.getContentPane().add(assignbutton);
+		
+		JLabel lblNewLabel = new JLabel("\u0634\u0645\u0627\u0631\u0647 \u0646\u06CC\u0627\u0632\u0645\u0646\u062F\u06CC: ");
+		lblNewLabel.setBounds(475, 374, 101, 14);
+		frame.getContentPane().add(lblNewLabel);
+		
+		textFieldid = new JTextField();
+		textFieldid.setBounds(376, 368, 86, 20);
+		frame.getContentPane().add(textFieldid);
+		textFieldid.setColumns(10);
+		
+		JLabel lblNewLabel_1 = new JLabel("\u062A\u0627\u0631\u06CC\u062E \u0627\u062E\u062A\u0635\u0627\u0635 :");
+		lblNewLabel_1.setBounds(489, 409, 86, 14);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		textFieldassignDate = new JTextField();
+		textFieldassignDate.setBounds(377, 403, 86, 20);
+		frame.getContentPane().add(textFieldassignDate);
+		textFieldassignDate.setColumns(10);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(29, 93, 546, 263);
@@ -186,5 +212,11 @@ public class Physicalassign {
 		
 		table_1 = new JTable();
 		scrollPane.setViewportView(table_1);
+	}
+
+	protected void create(JTextField textFieldid2, JTextField textFieldassignDate2) {
+		// TODO Auto-generated method stub
+		this.physicalBusyResource=new PhysicalBusyResource(textFieldassignDate2.getText(),  Integer.parseInt(textFieldid2.getText()));
+		//physicalBusyResource.add();
 	}
 }

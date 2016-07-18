@@ -42,9 +42,9 @@ public class RegInfoRequirement {
 	 * Launch the application.
 	 */
 	
-	
 	public void showRegInfoRequirement() {
-		EventQueue.invokeLater(new Runnable() {
+	//public static void main(String[] args) {	
+	EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					RegInfoRequirement window = new RegInfoRequirement();
@@ -168,6 +168,8 @@ public class RegInfoRequirement {
 			public void actionPerformed(ActionEvent e) {
 				
 				create(textFieldres,textFieldproject,textFieldsection , textFieldcreateDate);
+				//SuccessUI ns = new SuccessUI();
+			//	ns.newScreen();
 			}
 		});
 		GridBagConstraints gbc_regReq = new GridBagConstraints();
