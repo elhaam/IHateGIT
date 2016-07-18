@@ -47,6 +47,7 @@ public class ResourceUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("\u0627\u0646\u062A\u062E\u0627\u0628 \u0646\u0648\u0639 \u0645\u0646\u0628\u0639");
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);

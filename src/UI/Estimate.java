@@ -31,7 +31,7 @@ public class Estimate {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void main() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -56,10 +56,13 @@ public class Estimate {
 		// TODO Auto-generated method stub
 		 JTextField newtext = new JTextField();
 		 newtext.setBounds(i, j, k, l);
-         newtext.setName("tx" + count );
+         //newtext.setName("tx" + count );
          count++;
          arrayTfield.add(newtext.getText());
+        // System.out.println(""newtext.getText());
          panel.add(newtext);
+         System.out.println("new text added");
+        
 	}
 
 	/**
@@ -67,6 +70,7 @@ public class Estimate {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("\u062A\u062E\u0645\u06CC\u0646 \u0645\u0646\u0627\u0628\u0639");
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
@@ -97,9 +101,10 @@ public class Estimate {
 		JButton button = new JButton("\u0627\u0636\u0627\u0641\u0647 \u06A9\u0631\u062F\u0646");
 		button.addActionListener(new ActionListener() {
 			
-			
 			public void actionPerformed(ActionEvent arg0) {
-				 addMore(panel,155,ii+25,101,20);
+					ii=ii+25;
+					System.out.println("addmore");
+				 addMore(panel,155,ii,101,20);
 			}
 		});
 		button.setBounds(48, 152, 89, 23);

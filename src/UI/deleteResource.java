@@ -26,10 +26,6 @@ public class deleteResource {
 	public ResultSet all;
 	public boolean ismelk=false; 
 
-
-	/**
-	 * Launch the application.
-	 */
 	public static void main() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

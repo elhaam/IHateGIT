@@ -55,6 +55,7 @@ public class FinancialUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("\u0627\u0637\u0644\u0627\u0639\u0627\u062A \u0645\u0646\u0628\u0639 \u0645\u0627\u0644\u06CC");
 		frame.setBounds(100, 100, 419, 294);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new CardLayout(0, 0));

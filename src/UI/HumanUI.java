@@ -57,6 +57,7 @@ public class HumanUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("\u0627\u0637\u0644\u0627\u0639\u0627\u062A \u0645\u0646\u0628\u0639 \u0627\u0646\u0633\u0627\u0646\u06CC");
 		frame.setBounds(100, 100, 450, 481);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);

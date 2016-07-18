@@ -41,7 +41,7 @@ public class RegFinanRequirement {
 	 */
 	//public void showRegFinanRequirement()
 	
-	public  static void main(String[] args) {
+	public  static void showRegFinanRequirement() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

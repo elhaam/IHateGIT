@@ -149,9 +149,14 @@ public class HomeUI {
 				index = combo_maintain.getSelectedIndex();
 				if (index == 1) {
 					System.out.println("CREATION REGISTER");
+					createModule2 cr= new createModule2();
+					cr.main();
+							
 				}
 				if (index == 2) {
 					System.out.println("MAINNTAIN REGISTTER");
+					maintainModule mm=new maintainModule();
+					mm.main();
 				}
 			}
 		});
@@ -208,6 +213,8 @@ public class HomeUI {
 				index = combo_forcast.getSelectedIndex();
 				if (index == 1) {
 					System.out.println("FORCAST 1");
+					Estimate es=new Estimate();
+					es.main();
 				}
 				if (index == 2) {
 					System.out.println("FORCAST 2");

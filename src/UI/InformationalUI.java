@@ -62,6 +62,7 @@ public class InformationalUI {
 	 */
 	private void initialize() {
 		f = new JFrame();
+		f.setTitle("\u0627\u0637\u0644\u0627\u0639\u0627\u062A \u0645\u0646\u0628\u0639 \u0627\u0637\u0644\u0627\u0639\u0627\u062A\u06CC");
 		f.setBounds(100, 100, 497, 385);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.getContentPane().setLayout(new CardLayout(0, 0));
